@@ -35,7 +35,7 @@ if (typeof document !== 'undefined') {
   } as any;
 }
 
-const MONACO_LOCATION = "/monaco-editor/dev/vs";
+const MONACO_LOCATION = "/viz/monaco-editor/dev/vs";
 
 monacoLoader.config({
   paths: {

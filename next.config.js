@@ -6,6 +6,6 @@ module.exports = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  //basePath: `/viz`,
+  basePath: `/viz`,
   productionBrowserSourceMaps: true
 };
