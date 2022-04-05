@@ -1,31 +1,11 @@
-import { EditIcon, HamburgerIcon } from '@chakra-ui/icons';
 import {
-  Avatar,
   HStack,
-  IconButton,
   Link,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  Stack,
-  Text,
 } from '@chakra-ui/react';
 import React from 'react';
-import { useLoggedInUserData } from './authContext';
-import { LikeButton } from './LikeButton';
 import { Logo } from './Logo';
-import { registryLinks } from './registryLinks';
-import { ShareButton } from './ShareButton';
-import { useSourceActor } from './sourceMachine';
 
 export const CanvasHeader: React.FC = () => {
-  const [sourceState] = useSourceActor();
-
-  const loggedInUserData = useLoggedInUserData();
-  const registryData = sourceState.context.sourceRegistryData;
-  const userOwnsSource =
-    loggedInUserData?.id === registryData?.system?.owner?.id;
   return (
     <HStack zIndex={1} justifyContent="space-between" height="3rem">
       <Link
@@ -50,60 +30,6 @@ export const CanvasHeader: React.FC = () => {
           aria-label="Stately"
         />
       </Link>
-      {registryData && (
-        <Stack direction="row" spacing="4" alignItems="center" pr="4">
-          <Text fontWeight="semibold" fontSize="sm" color="gray.100">
-            {registryData?.system?.name || 'Unnamed Source'}
-          </Text>
-          <HStack>
-            <LikeButton />
-            <ShareButton sourceId={registryData.id} />
-            <Menu closeOnSelect>
-              <MenuButton
-                as={IconButton}
-                aria-label="Menu"
-                icon={<HamburgerIcon />}
-                size="sm"
-              />
-              <MenuList>
-                {userOwnsSource &&
-                  sourceState.context.sourceRegistryData?.system?.id && (
-                    <MenuItem
-                      as="a"
-                      href={registryLinks.editSystem(
-                        sourceState.context.sourceRegistryData?.system?.id,
-                      )}
-                    >
-                      <HStack spacing="3">
-                        <EditIcon />
-                        <Text>Edit</Text>
-                      </HStack>
-                    </MenuItem>
-                  )}
-                {registryData.system?.owner && (
-                  <MenuItem
-                    as="a"
-                    href={registryLinks.viewUserById(
-                      registryData?.system?.owner?.id,
-                    )}
-                  >
-                    <HStack spacing="3">
-                      <Avatar
-                        src={registryData.system?.owner?.avatarUrl || ''}
-                        name={registryData.system?.owner?.displayName || ''}
-                        size="xs"
-                        height="24px"
-                        width="24px"
-                      ></Avatar>
-                      <Text>View Author</Text>
-                    </HStack>
-                  </MenuItem>
-                )}
-              </MenuList>
-            </Menu>
-          </HStack>
-        </Stack>
-      )}
     </HStack>
   );
 };
