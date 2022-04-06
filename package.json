@@ -37,7 +37,7 @@
     "start:app": "next",
     "build": "graphql-codegen && next build",
     "preexport": "npm run build",
-    "export": "next export",
+    "export": "next export -o viz",
     "serve": "next start",
     "graphql:codegen": "graphql-codegen --watch",
     "postinstall": "patch-package && mkdir -p public/monaco-editor && cp -r node_modules/monaco-editor public && cp node_modules/elkjs/lib/elk.bundled.js public",
