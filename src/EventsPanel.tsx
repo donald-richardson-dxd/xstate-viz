@@ -63,7 +63,7 @@ const EventConnection: React.FC<{ event: SimEvent }> = ({ event }) => {
 const stickyProps = {
   position: 'sticky',
   top: 0,
-  backgroundColor: 'var(--chakra-colors-gray-800)',
+  backgroundColor: 'transparent',
   zIndex: 1,
 } as const;
 

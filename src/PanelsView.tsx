@@ -34,7 +34,7 @@ export const PanelsView = (props: BoxProps) => {
       data-testid="panels-view"
     >
       <Tabs
-        bg="gray.800"
+        bg="gray.200"
         display="grid"
         gridTemplateRows="3rem 1fr"
         height="100%"
@@ -48,7 +48,7 @@ export const PanelsView = (props: BoxProps) => {
           <Tab>Events</Tab>
           <Tab>
             Actors{' '}
-            <Badge fontSize="x-small" marginLeft="1" colorScheme="blue">
+            <Badge fontSize="x-small" marginLeft="1" colorScheme="white">
               {Object.values(services).length}
             </Badge>
           </Tab>

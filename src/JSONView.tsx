@@ -22,7 +22,7 @@ export const JSONView: React.FC<{ src: object; name?: string }> = ({
     <ReactJson
       src={src}
       name={name}
-      theme={vizReactJsonTheme}
+      //theme={vizReactJsonTheme}
       collapsed={1}
       onEdit={false}
       displayDataTypes={false}

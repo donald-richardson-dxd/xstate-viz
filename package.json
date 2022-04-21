@@ -34,7 +34,7 @@
   },
   "scripts": {
     "start": "concurrently \"npm:start:app\" \"npm:graphql:codegen\"",
-    "start:app": "next",
+    "start:app": "next -p 3333",
     "build": "graphql-codegen && next build",
     "preexport": "npm run build",
     "export": "next export -o viz",

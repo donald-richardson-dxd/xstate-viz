@@ -70,8 +70,7 @@ export const CanvasView: React.FC = () => {
       height="100%"
       gridTemplateRows='3rem 1fr auto'
     >
-      <Box data-testid="canvas-header" bg="gray.800" zIndex={1} padding="0">
-        <CanvasHeader />
+      <Box data-testid="canvas-header" zIndex={1} padding="0">
       </Box>
       <CanvasContainer panModeEnabled={panModeEnabled}>
         {digraph && <Graph digraph={digraph} />}
